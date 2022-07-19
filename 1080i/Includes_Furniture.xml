@@ -2247,44 +2247,6 @@
                 <label>$INFO[Window(Home).Property(TMDbHelper.ListItem.RottenTomatoes_UserMeter)]%</label>
             </control>
         </control>
-        <control type="grouplist">
-            <include>Animation.FurnitureVisible</include>
-            <visible>Skin.HasSetting(furniture.flags)</visible>
-            <visible>[Container.Content(movies) | Container.Content(files) | Container.Content(episodes)] | [Window.IsVisible(home) + ControlGroup(301).HasFocus() + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode)] + [Skin.HasSetting(home.vertical) + Skin.HasSetting(home.vertical.widgets)] + !Skin.HasSetting(hide.furniture.flags.vertical.widgets)]</visible>
-            <visible>!String.IsEqual(ListItem.Label,..)</visible>
-            <left>SidePad</left>
-            <centerbottom>NavBarPad</centerbottom>
-            <include content="def_right" condition="Skin.HasSetting(furniture.clock)">
-                <param name="right" value="SidePad" />
-            </include>
-            <include content="def_right" condition="!Skin.HasSetting(furniture.clock)">
-                <param name="right" value="440" />
-            </include>
-            <height>120</height>
-            <orientation>horizontal</orientation>
-            <align>left</align>
-            <itemgap>0</itemgap>
-            <usecontrolcoords>true</usecontrolcoords>
-            <control type="image" description="Duration">
-                <width>48</width>
-                <height>64</height>
-                <centertop>50%</centertop>
-                <texture colordiffuse="Dark1">flags/time.png</texture>
-                <aspectratio align="left">scale</aspectratio>
-                <visible>!String.IsEmpty(ListItem.Duration(mins)) + [Control.IsVisible(500) | Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(55)]</visible>
-            </control>
-            <control type="label" description="Duration">
-                <width>auto</width>
-                <centertop>50%</centertop>
-                <height>64</height>
-                <align>left</align>
-                <aligny>center</aligny>
-                <label>$VAR[LabelDurationTimeCheck]  </label>
-                <font>Flag</font>
-                <textcolor>Dark1</textcolor>
-                <visible>!String.IsEmpty(ListItem.Duration(mins)) + [Control.IsVisible(500) | Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(55)]</visible>
-            </control>
-        </control>
     </include>
 
     <include name="Furniture_Hub_Flags">
